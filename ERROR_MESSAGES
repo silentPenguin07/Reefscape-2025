@@ -1,0 +1,4 @@
+At frc.robot.robot_subsystems.DriveSubsystem.java: m_gyro.calibrate(); returning calibrate() not found for type AHRS 
+
+Why isn't this working?
+--In the new (2024) com.kauailabs.navx.frc.AHRS library, the calibrate() method is commented out for some reason.
