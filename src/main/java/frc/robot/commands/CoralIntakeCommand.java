@@ -5,28 +5,29 @@ import frc.robot.robot_subsystems.CoralIntakeSubsystem;
 
 public class CoralIntakeCommand extends Command {
     
-    private final CoralIntakeSubsystem intakeSubsystem;
+    private final CoralIntakeSubsystem coralIntakeSubsystem;
     private boolean reverse;
 
-    public CoralIntakeCommand(CoralIntakeSubsystem intakeSubsystem, boolean reverse)
+    public CoralIntakeCommand(CoralIntakeSubsystem coralIntakeSubsystem, boolean reverse)
     {
-        this.intakeSubsystem = intakeSubsystem;
+        this.coralIntakeSubsystem = coralIntakeSubsystem;
         this.reverse = reverse;
+        addRequirements(coralIntakeSubsystem);
     }
 
     public void initialize()
     {
-        intakeSubsystem.brake();
+        coralIntakeSubsystem.brake();
     }
 
     public void execute()
     {
-        intakeSubsystem.intake(reverse);
+        coralIntakeSubsystem.intake(reverse);
     }
 
     public void end(boolean interrupted)
     {
-        intakeSubsystem.brake();
+        coralIntakeSubsystem.brake();
     }
 
     public boolean isFinished()

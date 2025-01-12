@@ -9,6 +9,7 @@ public class Robot extends TimedRobot{
     private Command m_autonomousCommand;
     private RobotContainer m_robotContainer;
     private CommandFactory m_commandFactory;
+    @SuppressWarnings("unused")
     private OperatorInterface m_operatorInterface;
  
 

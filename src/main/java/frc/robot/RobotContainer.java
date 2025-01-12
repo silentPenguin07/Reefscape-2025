@@ -1,11 +1,10 @@
 package frc.robot;
 
-import com.pathplanner.lib.auto.NamedCommands;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.robot_subsystems.AlgaeIntakeSubsystem;
 import frc.robot.robot_subsystems.CoralElevatorSubsystem;
 import frc.robot.robot_subsystems.DriveSubsystem;
 import frc.robot.robot_subsystems.CoralIntakeSubsystem;
@@ -16,6 +15,7 @@ public class RobotContainer {
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
     private final CoralIntakeSubsystem intakeSubsystem = new CoralIntakeSubsystem();
     private final CoralElevatorSubsystem coralElevatorSubsystem = new CoralElevatorSubsystem();
+    private final AlgaeIntakeSubsystem algaeIntakeSubsystem = new AlgaeIntakeSubsystem();
     
     Joystick driverGamepad = new Joystick(Constants.Ports.CONTROLLER.DRIVER_JOYSTICK);
 
@@ -73,6 +73,11 @@ public class RobotContainer {
     public CoralElevatorSubsystem getCoralElevatorSubsystem()
     {
         return coralElevatorSubsystem;
+    }
+
+    public AlgaeIntakeSubsystem getAlgaeIntakeSubsystem()
+    {
+        return algaeIntakeSubsystem;
     }
 
 }

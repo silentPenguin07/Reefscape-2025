@@ -12,7 +12,8 @@ public class CoralIntakeSubsystem extends SubsystemBase {
 
     public CoralIntakeSubsystem()
     {
-        CANSparkMax m_intake = new CANSparkMax(Constants.ElevatorConstants.INTAKE_MOTOR_ID, MotorType.kBrushless);
+        @SuppressWarnings({ "resource", "unused" })
+        CANSparkMax m_intake = new CANSparkMax(Constants.ElevatorConstants.CORAL_INTAKE_MOTOR_ID, MotorType.kBrushless);
     }
 
     public void intake(boolean reverse)
