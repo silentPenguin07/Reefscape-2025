@@ -6,11 +6,11 @@ import frc.robot.Constants;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;;
 
-public class IntakeSubsystem extends SubsystemBase {
+public class CoralIntakeSubsystem extends SubsystemBase {
 
     private CANSparkMax m_intake;
 
-    public IntakeSubsystem()
+    public CoralIntakeSubsystem()
     {
         CANSparkMax m_intake = new CANSparkMax(Constants.ElevatorConstants.INTAKE_MOTOR_ID, MotorType.kBrushless);
     }

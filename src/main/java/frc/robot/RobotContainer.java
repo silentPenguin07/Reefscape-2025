@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.robot_subsystems.CoralElevatorSubsystem;
 import frc.robot.robot_subsystems.DriveSubsystem;
-import frc.robot.robot_subsystems.IntakeSubsystem;
+import frc.robot.robot_subsystems.CoralIntakeSubsystem;
 
 public class RobotContainer {
     
     public static final double GAMEPAD_AXIS_THRESHOLD = 0.2;
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
-    private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+    private final CoralIntakeSubsystem intakeSubsystem = new CoralIntakeSubsystem();
     private final CoralElevatorSubsystem coralElevatorSubsystem = new CoralElevatorSubsystem();
     
     Joystick driverGamepad = new Joystick(Constants.Ports.CONTROLLER.DRIVER_JOYSTICK);
@@ -29,8 +29,8 @@ public class RobotContainer {
          * be used.
          */
         //NamedCommands.registerCommand("Shooter Rev", new RevShooterCommand(getShooterSubsystem()));
-        //NamedCommands.registerCommand("Intake and Shoot", new IntakeShootCommand(getShooterSubsystem(), getIntakeSubsystem()));
-        //NamedCommands.registerCommand("Halt", new HaltCommand(getShooterSubsystem(), getIntakeSubsystem()));
+        //NamedCommands.registerCommand("Intake and Shoot", new IntakeShootCommand(getShooterSubsystem(), getCoralIntakeSubsystem()));
+        //NamedCommands.registerCommand("Halt", new HaltCommand(getShooterSubsystem(), getCoralIntakeSubsystem()));
         //NamedCommands.registerCommand("Reverse Intake", new RunIntake(intakeSubsystem, true));
 
         driveSubsystem.initialize();
@@ -65,7 +65,7 @@ public class RobotContainer {
         return driveSubsystem;
     }
 
-    public IntakeSubsystem getIntakeSubsystem()
+    public CoralIntakeSubsystem getCoralIntakeSubsystem()
     {
         return intakeSubsystem;
     }

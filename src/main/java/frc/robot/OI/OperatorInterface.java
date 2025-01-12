@@ -6,7 +6,7 @@ import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.commands.CoralElevatorSetPositionCommand;
 import frc.robot.commands.DriveCommand;
-import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.CoralIntakeCommand;
 import frc.robot.commands.XCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
@@ -20,15 +20,19 @@ public class OperatorInterface {
                 /*
                 operator controls
                 */
-                new JoystickButton(operator, Constants.Controller.X_BUTTON).whileTrue(new IntakeCommand(robotContainer.getIntakeSubsystem(), false)); // run intake
-                
-                // ARM TO HIGH POSITION
-                new JoystickButton(operator, Constants.Controller.Y_BUTTON).onTrue(new CoralElevatorSetPositionCommand(20, robotContainer.getCoralElevatorSubsystem()));
+                // coral intake/outtake
+                new JoystickButton(operator, Constants.Controller.RIGHT_BUMPER).whileTrue(new CoralIntakeCommand(robotContainer.getCoralIntakeSubsystem(), false)); // run coral intake
 
-                // driver controls
+                // ARM TO POSITIONS
+                new JoystickButton(operator, Constants.Controller.Y_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_HIGH, robotContainer.getCoralElevatorSubsystem()));
+                new JoystickButton(operator, Constants.Controller.X_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_MID, robotContainer.getCoralElevatorSubsystem()));
+                new JoystickButton(operator, Constants.Controller.A_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_LOW, robotContainer.getCoralElevatorSubsystem()));
+
+                /*
+                driver controls
+                */
                 new JoystickButton(driveJoystick, 2).onTrue(commandFactory.gyroResetCommand());
                 new JoystickButton(driveJoystick, 3).onTrue(new XCommand());
-                robotContainer.getDriveSubsystem()
-                                .setDefaultCommand(new DriveCommand(robotContainer.getDriveSubsystem(), driveJoystick));
+                robotContainer.getDriveSubsystem().setDefaultCommand(new DriveCommand(robotContainer.getDriveSubsystem(), driveJoystick));
         }
 }

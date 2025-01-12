@@ -29,6 +29,11 @@ public final class Constants {
         public static final double kP = 0.04;
         public static final double ELEVATOR_MAX_SPEED = 0.2;
         public static final double ELEVATOR_GRAVITY_CONST = 0.03; // TODO: subject to change
+
+        // elevator angles
+        public static final double ELEVATOR_ANGLE_LOW = 0;
+        public static final double ELEVATOR_ANGLE_MID = 40;
+        public static final double ELEVATOR_ANGLE_HIGH = 50;
     }
 
     public static final class DrivetrainConstants {

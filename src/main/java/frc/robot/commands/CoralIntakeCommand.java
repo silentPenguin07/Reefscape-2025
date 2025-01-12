@@ -1,14 +1,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.robot_subsystems.IntakeSubsystem;
+import frc.robot.robot_subsystems.CoralIntakeSubsystem;
 
-public class IntakeCommand extends Command {
+public class CoralIntakeCommand extends Command {
     
-    private final IntakeSubsystem intakeSubsystem;
+    private final CoralIntakeSubsystem intakeSubsystem;
     private boolean reverse;
 
-    public IntakeCommand(IntakeSubsystem intakeSubsystem, boolean reverse)
+    public CoralIntakeCommand(CoralIntakeSubsystem intakeSubsystem, boolean reverse)
     {
         this.intakeSubsystem = intakeSubsystem;
         this.reverse = reverse;

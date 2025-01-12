@@ -38,7 +38,7 @@ public class CoralElevatorSetPositionCommand extends Command {
 
         // TODO: not assigning a min power just yet
 
-        m_subsystem.setElevatorSpeed(output - m_subsystem.getGravityControl()); // TODO: Gravity control???
+        m_subsystem.setElevatorSpeed(output - m_subsystem.getGravityControl()); // gravity can help or hinder
 
     }
 
