@@ -125,7 +125,7 @@ public class DriveSubsystem extends EntechSubsystem{
         return m_odometry.getPoseMeters();
     }
     public Command auton() {
-        return new PathPlannerAuto("Straight Auto");
+        return new PathPlannerAuto("Default Auto");
     }
 
     /**
