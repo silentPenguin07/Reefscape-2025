@@ -456,14 +456,15 @@ public class DriveSubsystem extends EntechSubsystem{
 
     public void periodic()
     {
-        // outputting offsets
+        // outputting offsets NOT NEEDED
+        /* 
         SmartDashboard.putNumber("Front left angle offset", FRONT_LEFT_VIRTUAL_OFFSET_RADIANS);
         SmartDashboard.putNumber("Front right angle offset", FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS);
         SmartDashboard.putNumber("Rear left angle offset", REAR_LEFT_VIRTUAL_OFFSET_RADIANS);
         SmartDashboard.putNumber("Rear right angle offset", REAR_RIGHT_VIRTUAL_OFFSET_RADIANS);
-
+        */
+        
         // outputting encoder angles for modules
-
         SmartDashboard.putNumber("Front left angle", m_frontLeft.getTurningAbsoluteEncoder().getPosition());
         SmartDashboard.putNumber("Front right angle", m_frontRight.getTurningAbsoluteEncoder().getPosition());
         SmartDashboard.putNumber("Rear left angle", m_rearLeft.getTurningAbsoluteEncoder().getPosition());
@@ -473,10 +474,10 @@ public class DriveSubsystem extends EntechSubsystem{
         SmartDashboard.putNumber("Gyro Angle", m_gyro.getAngle());
         
         // module encoder velocities
-        SmartDashboard.putNumber("Front left velocity", m_frontLeft.getDrivingEncoder().getVelocity());
-        SmartDashboard.putNumber("Front right velocity", m_frontRight.getDrivingEncoder().getVelocity());
-        SmartDashboard.putNumber("Rear left velocity", m_rearLeft.getDrivingEncoder().getVelocity());
-        SmartDashboard.putNumber("Front right velocity", m_rearRight.getDrivingEncoder().getVelocity());
+        SmartDashboard.putNumber("Front left vel", m_frontLeft.getDrivingEncoder().getVelocity());
+        SmartDashboard.putNumber("Front right vel", m_frontRight.getDrivingEncoder().getVelocity());
+        SmartDashboard.putNumber("Rear left vel", m_rearLeft.getDrivingEncoder().getVelocity());
+        SmartDashboard.putNumber("Front right vel", m_rearRight.getDrivingEncoder().getVelocity());
     }
 
 

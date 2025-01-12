@@ -10,7 +10,7 @@ public class CoralElevatorSetPositionCommand extends Command {
     private CoralElevatorSubsystem m_subsystem;
     private double position;
     private double error;
-    private double kP = Constants.ArmConstants.kP;
+    private double kP = Constants.ElevatorConstants.kP;
 
     public CoralElevatorSetPositionCommand(double position, CoralElevatorSubsystem m_Subsystem)
     {
@@ -28,16 +28,17 @@ public class CoralElevatorSetPositionCommand extends Command {
     @Override
     public void execute()
     {
-        this.error = position - m_subsystem.getArmPosition();
+        this.error = position - m_subsystem.getElevatorPosition();
         double output = kP * error;
 
-        if (Math.abs(output) > 0.2) // cap the goddamn power
+        if (Math.abs(output) > Constants.ElevatorConstants.ELEVATOR_MAX_SPEED) // cap the goddamn power
         {
-            output = Math.copySign(0.2, output);
+            output = Math.copySign(Constants.ElevatorConstants.ELEVATOR_MAX_SPEED, output);
         }
+
         // TODO: not assigning a min power just yet
 
-        m_subsystem.setElevatorSpeed(output); // TODO: Gravity control???
+        m_subsystem.setElevatorSpeed(output - m_subsystem.getGravityControl()); // TODO: Gravity control???
 
     }
 

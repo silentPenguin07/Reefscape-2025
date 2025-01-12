@@ -1,6 +1,5 @@
 package frc.robot.OI;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.CommandFactory;
 import frc.robot.Constants;
@@ -24,7 +23,7 @@ public class OperatorInterface {
                 new JoystickButton(operator, Constants.Controller.X_BUTTON).whileTrue(new IntakeCommand(robotContainer.getIntakeSubsystem(), false)); // run intake
                 
                 // ARM TO HIGH POSITION
-                new JoystickButton(operator, Constants.Controller.Y_BUTTON).onTrue(new CoralElevatorSetPositionCommand(50, robotContainer.getCoralElevatorSubsystem()));
+                new JoystickButton(operator, Constants.Controller.Y_BUTTON).onTrue(new CoralElevatorSetPositionCommand(20, robotContainer.getCoralElevatorSubsystem()));
 
                 // driver controls
                 new JoystickButton(driveJoystick, 2).onTrue(commandFactory.gyroResetCommand());

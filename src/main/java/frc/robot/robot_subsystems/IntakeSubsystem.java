@@ -12,7 +12,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public IntakeSubsystem()
     {
-        CANSparkMax m_intake = new CANSparkMax(Constants.ArmConstants.INTAKE_MOTOR_ID, MotorType.kBrushless);
+        CANSparkMax m_intake = new CANSparkMax(Constants.ElevatorConstants.INTAKE_MOTOR_ID, MotorType.kBrushless);
     }
 
     public void intake(boolean reverse)
